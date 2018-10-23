@@ -29,12 +29,12 @@ public class MainActivity extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new Connect().execute();
+                new Connecting().execute();
             }
         });
     }
 
-    class Connect extends AsyncTask<String, String, String>
+    class Connecting extends AsyncTask<String, Void, String>
     {
         @Override
         protected String doInBackground(String... params)
@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
                 urlConnection = (HttpURLConnection) Url.openConnection();
                 int response = urlConnection.getResponseCode();
 
-                if(response == HttpURLConnection.HTTP_OK)
+                if(response == HttpURLConnection.HTTP_OK);
                     //To be continue...
             }
             catch(Exception e)
@@ -58,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
                 if(urlConnection != null)
                     urlConnection.disconnect();
             }
+            return null;
         }
 
         @Override
