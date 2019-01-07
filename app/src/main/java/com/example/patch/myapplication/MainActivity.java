@@ -1,9 +1,9 @@
 package com.example.patch.myapplication;
 
 import android.os.AsyncTask;
-import android.provider.DocumentsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -11,12 +11,6 @@ import android.widget.TextView;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
-
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
   private TextView text;
@@ -26,26 +20,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override protected void onPreExecute() {}
 
     @Override protected String doInBackground(String... params) {
-      //HttpURLConnection urlConnection = null;
-
       try {
-        /*URL Url = new URL("https://www.stoloto.ru/rapido/archive");
-        urlConnection = (HttpURLConnection) Url.openConnection();
-        urlConnection.setReadTimeout(10000*//*milliseconds*//*);
-        urlConnection.setConnectTimeout(15000*//*milliseconds*//*);
-        urlConnection.setRequestMethod("GET");
-        urlConnection.setDoInput(true);
-        urlConnection.connect();
-        int response = urlConnection.getResponseCode();*/
         StringBuilder buf = new StringBuilder();
 
-        /*if(response == HttpURLConnection.HTTP_OK) {
-          BufferedReader reader = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
-          String line = null;
-
-          while ((line = reader.readLine()) != null)
-            buf.append(line);
-        }*/
         int max_tiraz = 0;
         Document doc = Jsoup.connect("https://www.stoloto.ru/rapido/archive").get();
         for(Element el : doc.getElementsByClass("elem")) {
@@ -62,21 +39,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             buf.append('\n');
           }
         }
-        //buf.append(max_tiraz);
         return buf.toString();
       }
       catch(Exception e) {
         e.printStackTrace();
       }
-      /*finally {
-        if(urlConnection != null)
-          urlConnection.disconnect();
-      }*/
       return null;
     }
 
     @Override protected void onPostExecute(String result) {
       text.setText(result);
+      text.setMovementMethod(new ScrollingMovementMethod());
     }
   }
 

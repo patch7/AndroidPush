@@ -1,5 +1,56 @@
 <resources>
     <string name="app_name">MyApp</string>
+    <string name="clear_button">Clear</string>
     <string name="connect_button">Connect</string>
-    <string name="default_text">Please click connect button.\nlgcvbclc\ndvsdvnbkb. </string>
+    <string name="default_text">
+        Please click connect button.\n\n
+
+        Bla bla bla\n
+        Bla bla bla\n
+        Bla bla bla\n
+        Bla bla bla\n
+        Bla bla bla\n
+        Bla bla bla\n
+        Bla bla bla\n
+        Bla bla bla\n
+        Bla bla bla\n
+        Bla bla bla\n
+        Bla bla bla\n
+        Bla bla bla\n
+        Bla bla bla\n
+        Bla bla bla\n
+        Bla bla bla\n
+        Bla bla bla\n
+        Bla bla bla\n
+        Bla bla bla\n
+        Bla bla bla\n
+        Bla bla bla\n
+        Bla bla bla\n
+        Bla bla bla\n
+        Bla bla bla\n
+        Bla bla bla\n
+        Bla bla bla\n
+        Bla bla bla\n
+        Bla bla bla\n
+        Bla bla bla\n
+        Bla bla bla\n
+        Bla bla bla\n
+        Bla bla bla\n
+        Bla bla bla\n
+        Bla bla bla\n
+        Bla bla bla\n
+        Bla bla bla\n
+        Bla bla bla\n
+        Bla bla bla\n
+        Bla bla bla\n
+        Bla bla bla\n
+        Bla bla bla\n
+        Bla bla bla\n
+        Bla bla bla\n
+        Bla bla bla\n
+        Bla bla bla\n
+        Bla bla bla\n
+        Bla bla bla\n
+        Bla bla bla\n
+        Bla bla bla\n</string>
 </resources>
